@@ -479,7 +479,7 @@ def make_aware(dt, tz):
 
 
 def localtime(dt):
-    dt = make_aware(dt, settings.TIME_ZONE)
+    dt = timezone.make_naive(dt)
     return dt
 
 
