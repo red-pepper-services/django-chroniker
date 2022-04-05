@@ -772,8 +772,8 @@ class Job(models.Model):
             return _('due')
         if delta.seconds < 60:
             # Adapted from django.utils.timesince
-            count = lambda n: ungettext('second', 'seconds', n)
-            return ugettext('%(number)d %(type)s') % {'number': delta.seconds, 'type': count(delta.seconds)}
+            count = lambda n: 'seconds'
+            return _('%(number)d %(type)s') % {'number': delta.seconds, 'type': count(delta.seconds)}
         return timeuntil(self.next_run)
 
     get_timeuntil.short_description = _('time until next run')
